@@ -1,5 +1,7 @@
 # Chataway
 
+![Chataway Screenshot](assets/screenshot.png?raw=true)
+
 Continuing my efforts to build up a portfolio of programming projects, I decided
 to create Chataway, an effortlessly simple way to chat. Chat rooms are created
 on-the-fly by going to the root URL and are completely disposable. 
