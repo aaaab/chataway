@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <title>chataway</title>
+        
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+        <link href="/static/main.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="title">chataway</div>
+        <input id="username" class="username-box" type="text" placeholder="set username">
+        
+        <ul id="message-list" class="message-list"></ul>
+        
+        <div class="send-bar">
+            <input id="message" class="message-box" type="text" placeholder="enter message here">
+            <input id="submit" class="send-button" type="button" value="submit">
+        </div>
+        
+        <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+        <script src="/static/main.js"></script>
+    </body>
+</html>

@@ -1,0 +1,32 @@
+{
+  "name": "chataway",
+  "version": "1.0.0",
+  "description": "Disposable chatrooms in Node",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://777fdc2a332162e0bbf4569335efab13a82db9ea@github.com/aaaab/chataway.git"
+  },
+  "keywords": [
+    "disposable",
+    "chat"
+  ],
+  "author": "Cameron Brown <me@cameron-brown.me>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/aaaab/chataway/issues"
+  },
+  "homepage": "https://github.com/aaaab/chataway#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.1.2"
+  },
+  "dependencies": {
+    "express": "^4.14.0",
+    "socket.io": "^1.5.0"
+  }
+}
