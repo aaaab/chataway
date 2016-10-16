@@ -18,12 +18,15 @@ app.get('/:chatId', (req, res) => {
 });
 
 io.on('connection', (socket) => {
-  console.log('a user connected');
-  socket.on('message', (event) => {
-    console.log(event);
-    io.emit('message', event);
+  console.log('A user connected.');
+  socket.on('message', (message) => {
+    console.log(message);
+    io.to(message.roomId).emit('message', message);
   });
-  socket.on('disconnect', () => console.log('disconnected'));
+  socket.on('room', function(room) {
+    socket.join(room);
+  });
+  socket.on('disconnect', () => console.log('A user disconnected.'));
 });
 
 const PORT = process.env.PORT;

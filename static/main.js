@@ -7,6 +7,9 @@
    * Handle connection.
    */
   window.app.onConnect = function() {
+    // Join the room.
+    window.app.socket.emit('room', window.app.roomId);
+    
     // Send Hello, world! messages.
     if(!window.app.helloWorld) {
       window.app.sendMessage('Hello, world!', true);
@@ -167,7 +170,8 @@
     
     window.app.socket.emit('message', {
       message: message,
-      sender: sender
+      sender: sender,
+      roomId: window.app.roomId
     });
   };
   
@@ -186,13 +190,20 @@
   window.app.helloWorld = false;
   
   /**
+   * The ID of the current room (/<roomId>).
+   * 
+   * @type {string}
+   */
+  window.app.roomId = window.location.pathname;
+  
+  /**
    * Initialise the app.
    */
   window.app.init = function() {
     console.log('Hello, world!');
     
     // Connect to server and bind events.
-    var socket = io('https://chataway-thinkallabout.c9users.io');
+    var socket = io(`https://chataway-thinkallabout.c9users.io`);
     socket.on('connect', window.app.onConnect);
     socket.on('message', window.app.onMessage);
     socket.on('disconnect', window.app.onDisconnect);
